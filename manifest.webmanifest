@@ -1,0 +1,18 @@
+{
+  "name": "QuizFunny — Παιχνίδι Γνώσεων",
+  "short_name": "QuizFunny",
+  "lang": "el",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#060e21",
+  "theme_color": "#071329",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
