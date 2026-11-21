@@ -137,6 +137,23 @@ footer{display:none}
 /* Center standalone dialog actions without stretching a single button */
 .dialog-actions button:only-child{flex:0 1 230px;max-width:100%;margin-inline:auto}
 .dialog-actions button{text-align:center}
+
+/* TV / Full HD: readable answers are the main visual focus. The question
+   takes only the height it needs, instead of stretching into empty space. */
+@media (min-width:1200px) and (min-height:850px){
+ .shell{max-width:min(1580px,calc(100vw - 28px));grid-template-columns:minmax(0,1fr) 205px;gap:12px}
+ .stage{gap:clamp(8px,1.1vh,13px);padding:clamp(12px,1.6vh,19px)}
+ .orb{flex:0 0 auto;width:clamp(68px,10vh,100px);height:clamp(68px,10vh,100px)}
+ .question{flex:0 1 auto;min-height:120px;max-height:225px;
+   padding:12px 20px;font-size:clamp(24px,2.9vh,32px);line-height:1.3;overflow-wrap:anywhere}
+ .answers{flex:1 1 auto;min-height:260px;grid-template-rows:repeat(2,minmax(112px,1fr));gap:12px}
+ .answer{min-height:110px;height:100%;padding:16px 22px;
+   font-size:clamp(21px,2.4vh,28px);line-height:1.3;overflow-wrap:anywhere;align-items:center}
+ .answer .letter{font-size:1.1em;flex:0 0 auto}
+ .helpers button{min-height:45px;font-size:15px}
+ .bottom button{min-height:46px;font-size:16px}
+ .status{font-size:14px}
+}
 </style><style id="applications-unified-game-banner">
 .suite-game-banner{box-sizing:border-box;display:block;width:min(100%,720px);height:clamp(74px,12dvh,112px);margin:2px auto 10px;overflow:hidden;border-radius:12px;border:1px solid rgba(111,188,255,.4);background:#102e54;box-shadow:0 10px 25px rgba(0,6,26,.32)}
 body>.suite-game-banner{width:min(calc(100% - 24px),720px);margin:12px auto 10px}
