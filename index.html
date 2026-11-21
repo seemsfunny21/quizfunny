@@ -102,4 +102,36 @@ footer{display:none}
  .side h3{margin-bottom:2px}
  .step{font-size:9px}
 }
-</style></head><body><header class="top"><div class="logo">Quiz<em>Funny</em></div><button id="settingsBtn" aria-label="Ρυθμίσεις">⚙ Ρυθμίσεις</button></header><main class="shell"><section class="stage"><div class="stage-top"><div><div class="eyebrow" id="level">15 ερωτήσεις</div><div class="prize" id="prize">1.000.000 €</div></div><div id="timer" class="timer" aria-live="off"></div></div><div class="orb" aria-hidden="true">€</div><div class="question" id="question">Έτοιμος για την πρώτη ερώτηση;</div><div class="answers" id="answers"></div><div class="helpers" id="helpers"><button data-help="fifty">50–50</button><button data-help="audience">👥 Κοινό</button><button data-help="phone">📞 Φίλος</button><button data-help="swap">🔁 Αλλαγή</button></div><div id="status" class="status" role="status"></div><div class="bottom"><button id="walk">🚪 Αποχώρηση</button><button id="next" class="mainbtn">▶ Έναρξη</button></div></section><aside class="side"><h3>🏆 Κλίμακα επάθλων</h3><div id="ladder" class="ladder"></div></aside></main><footer>Πρωτότυπο παιχνίδι γνώσεων • Εικονικά έπαθλα</footer><dialog id="modal"><h2 id="modalTitle"></h2><div id="modalText"></div><div class="dialog-actions" id="modalActions"></div></dialog><script src="./questions.js?v=20261121d"></script><script src="./app.js?v=20261121d"></script><script>if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261121b').catch(()=>{}));</script></body></html>
+
+/* v5 — refined compact layout, prize ladder uses content height rather than stretched rows */
+@media(max-width:760px){
+ .shell{justify-content:flex-start;gap:7px;overflow:hidden}
+ .stage{flex:0 0 auto;height:auto;padding:10px 12px;gap:8px;border-radius:18px;background:linear-gradient(155deg,#15295d,#0d173b 70%)}
+ .stage-top{min-height:0;align-items:center}
+ .eyebrow{font-size:10px}
+ .prize{font-size:25px}
+ .question{min-height:76px;max-height:none;padding:11px 13px;border-width:1px;border-color:#759bdc;background:linear-gradient(130deg,#1a3677,#152756);font-size:clamp(16px,2.45vh,21px)}
+ .answers{gap:7px}
+ .answer{min-height:clamp(51px,7.8vh,69px);border-width:1px;border-color:#597bbd;background:#152859;border-radius:12px;font-size:clamp(13px,2vh,16px);padding:8px 10px}
+ .helpers{gap:5px}
+ .helpers button{border-color:#4c70b5;background:#11234f;padding:7px 2px}
+ .status{min-height:0;font-size:11px}
+ .bottom button{min-height:34px}
+ .side{flex:0 0 auto;height:auto;min-height:0;overflow:hidden;padding:9px 10px 11px;background:linear-gradient(145deg,#111f46,#0b1635);border-radius:17px}
+ .side h3{font-size:14px;margin:0 0 8px}
+ .ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(5,auto);height:auto;flex:0 0 auto;gap:4px}
+ .step{min-height:29px;padding:4px 6px;gap:3px;border:1px solid #304a79;background:#14244a;border-radius:7px;font-size:clamp(9px,1.5vh,12px);line-height:1.15}
+ .step.current{border-color:#f5cf7b;background:#dca84b}
+ .step.safe:not(.current){border-color:#776137;background:#2a2945}
+}
+@media(max-width:760px) and (max-height:730px){
+ .stage{padding:7px 9px;gap:5px}
+ .question{min-height:60px;padding:7px 10px}
+ .answer{min-height:43px;padding:5px 7px}
+ .helpers button{padding:5px 2px}
+ .side{padding:6px 8px}
+ .side h3{margin-bottom:4px}
+ .ladder{gap:2px}
+ .step{min-height:24px;padding:2px 4px}
+}
+</style></head><body><header class="top"><div class="logo">Quiz<em>Funny</em></div><button id="settingsBtn" aria-label="Ρυθμίσεις">⚙ Ρυθμίσεις</button></header><main class="shell"><section class="stage"><div class="stage-top"><div><div class="eyebrow" id="level">15 ερωτήσεις</div><div class="prize" id="prize">1.000.000 €</div></div><div id="timer" class="timer" aria-live="off"></div></div><div class="orb" aria-hidden="true">€</div><div class="question" id="question">Έτοιμος για την πρώτη ερώτηση;</div><div class="answers" id="answers"></div><div class="helpers" id="helpers"><button data-help="fifty">50–50</button><button data-help="audience">👥 Κοινό</button><button data-help="phone">📞 Φίλος</button><button data-help="swap">🔁 Αλλαγή</button></div><div id="status" class="status" role="status"></div><div class="bottom"><button id="walk">🚪 Αποχώρηση</button><button id="next" class="mainbtn">▶ Έναρξη</button></div></section><aside class="side"><h3>🏆 Κλίμακα επάθλων</h3><div id="ladder" class="ladder"></div></aside></main><footer>Πρωτότυπο παιχνίδι γνώσεων • Εικονικά έπαθλα</footer><dialog id="modal"><h2 id="modalTitle"></h2><div id="modalText"></div><div class="dialog-actions" id="modalActions"></div></dialog><script src="./questions.js?v=20261121e"></script><script src="./app.js?v=20261121e"></script><script>if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261121b').catch(()=>{}));</script></body></html>
